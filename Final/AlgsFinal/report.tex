@@ -1,0 +1,1410 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={report},
+  pdfauthor={Dmitry},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\title{report}
+\author{Dmitry}
+\date{25 12 2020}
+
+\begin{document}
+\maketitle
+
+Устанавливаем пакеты
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{chooseCRANmirror}\NormalTok{(}\DataTypeTok{graphics=}\OtherTok{FALSE}\NormalTok{, }\DataTypeTok{ind=}\DecValTok{1}\NormalTok{)}
+
+\ControlFlowTok{if}\NormalTok{ (}\OperatorTok{!}\KeywordTok{requireNamespace}\NormalTok{(}\StringTok{"BiocManager"}\NormalTok{, }\DataTypeTok{quietly =} \OtherTok{TRUE}\NormalTok{))}
+  \KeywordTok{install.packages}\NormalTok{(}\StringTok{"BiocManager"}\NormalTok{)}
+
+\NormalTok{BiocManager}\OperatorTok{::}\KeywordTok{install}\NormalTok{(}\StringTok{"edgeR"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Bioconductor version 3.12 (BiocManager 1.30.10), R 4.0.3 (2020-10-10)
+\end{verbatim}
+
+\begin{verbatim}
+## Installing package(s) 'edgeR'
+\end{verbatim}
+
+\begin{verbatim}
+## package 'edgeR' successfully unpacked and MD5 sums checked
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: cannot remove prior installation of package 'edgeR'
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in file.copy(savedcopy, lib, recursive = TRUE): проблема с
+## копированием C:\Programing\R-4.0.3\library\00LOCK\edgeR\libs\x64\edgeR.dll в C:
+## \Programing\R-4.0.3\library\edgeR\libs\x64\edgeR.dll: Permission denied
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: restored 'edgeR'
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## The downloaded binary packages are in
+##  C:\Users\Dimka\AppData\Local\Temp\Rtmpkf2Mp5\downloaded_packages
+\end{verbatim}
+
+\begin{verbatim}
+## Old packages: 'foreign', 'Matrix'
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{BiocManager}\OperatorTok{::}\KeywordTok{install}\NormalTok{(}\StringTok{"limma"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Bioconductor version 3.12 (BiocManager 1.30.10), R 4.0.3 (2020-10-10)
+\end{verbatim}
+
+\begin{verbatim}
+## Installing package(s) 'limma'
+\end{verbatim}
+
+\begin{verbatim}
+## package 'limma' successfully unpacked and MD5 sums checked
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: cannot remove prior installation of package 'limma'
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in file.copy(savedcopy, lib, recursive = TRUE): проблема с
+## копированием C:\Programing\R-4.0.3\library\00LOCK\limma\libs\x64\limma.dll в C:
+## \Programing\R-4.0.3\library\limma\libs\x64\limma.dll: Permission denied
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: restored 'limma'
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## The downloaded binary packages are in
+##  C:\Users\Dimka\AppData\Local\Temp\Rtmpkf2Mp5\downloaded_packages
+\end{verbatim}
+
+\begin{verbatim}
+## Old packages: 'foreign', 'Matrix'
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{'plyr'}\NormalTok{, }\DataTypeTok{repos =} \StringTok{"http://cran.us.r-project.org"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## package 'plyr' successfully unpacked and MD5 sums checked
+## 
+## The downloaded binary packages are in
+##  C:\Users\Dimka\AppData\Local\Temp\Rtmpkf2Mp5\downloaded_packages
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"dplyr"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## package 'dplyr' successfully unpacked and MD5 sums checked
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: cannot remove prior installation of package 'dplyr'
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in file.copy(savedcopy, lib, recursive = TRUE): проблема с
+## копированием C:\Programing\R-4.0.3\library\00LOCK\dplyr\libs\x64\dplyr.dll в C:
+## \Programing\R-4.0.3\library\dplyr\libs\x64\dplyr.dll: Permission denied
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: restored 'dplyr'
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## The downloaded binary packages are in
+##  C:\Users\Dimka\AppData\Local\Temp\Rtmpkf2Mp5\downloaded_packages
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"ggplot2"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## package 'ggplot2' successfully unpacked and MD5 sums checked
+## 
+## The downloaded binary packages are in
+##  C:\Users\Dimka\AppData\Local\Temp\Rtmpkf2Mp5\downloaded_packages
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{BiocManager}\OperatorTok{::}\KeywordTok{install}\NormalTok{(}\StringTok{"biomaRt"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Bioconductor version 3.12 (BiocManager 1.30.10), R 4.0.3 (2020-10-10)
+\end{verbatim}
+
+\begin{verbatim}
+## Installing package(s) 'biomaRt'
+\end{verbatim}
+
+\begin{verbatim}
+## package 'biomaRt' successfully unpacked and MD5 sums checked
+## 
+## The downloaded binary packages are in
+##  C:\Users\Dimka\AppData\Local\Temp\Rtmpkf2Mp5\downloaded_packages
+\end{verbatim}
+
+\begin{verbatim}
+## Old packages: 'foreign', 'Matrix'
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{BiocManager}\OperatorTok{::}\KeywordTok{install}\NormalTok{(}\StringTok{"GO.db"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Bioconductor version 3.12 (BiocManager 1.30.10), R 4.0.3 (2020-10-10)
+\end{verbatim}
+
+\begin{verbatim}
+## Installing package(s) 'GO.db'
+\end{verbatim}
+
+\begin{verbatim}
+## installing the source package 'GO.db'
+\end{verbatim}
+
+\begin{verbatim}
+## Old packages: 'foreign', 'Matrix'
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{BiocManager}\OperatorTok{::}\KeywordTok{install}\NormalTok{(}\StringTok{"org.Hs.eg.db"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Bioconductor version 3.12 (BiocManager 1.30.10), R 4.0.3 (2020-10-10)
+\end{verbatim}
+
+\begin{verbatim}
+## Installing package(s) 'org.Hs.eg.db'
+\end{verbatim}
+
+\begin{verbatim}
+## installing the source package 'org.Hs.eg.db'
+\end{verbatim}
+
+\begin{verbatim}
+## Old packages: 'foreign', 'Matrix'
+\end{verbatim}
+
+Подключаем нужные библиотеки
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(}\StringTok{"org.Hs.eg.db"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: AnnotationDbi
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: stats4
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: BiocGenerics
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: parallel
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'BiocGenerics'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:parallel':
+## 
+##     clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
+##     clusterExport, clusterMap, parApply, parCapply, parLapply,
+##     parLapplyLB, parRapply, parSapply, parSapplyLB
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:stats':
+## 
+##     IQR, mad, sd, var, xtabs
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     anyDuplicated, append, as.data.frame, basename, cbind, colnames,
+##     dirname, do.call, duplicated, eval, evalq, Filter, Find, get, grep,
+##     grepl, intersect, is.unsorted, lapply, Map, mapply, match, mget,
+##     order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,
+##     rbind, Reduce, rownames, sapply, setdiff, sort, table, tapply,
+##     union, unique, unsplit, which.max, which.min
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: Biobase
+\end{verbatim}
+
+\begin{verbatim}
+## Welcome to Bioconductor
+## 
+##     Vignettes contain introductory material; view with
+##     'browseVignettes()'. To cite Bioconductor, see
+##     'citation("Biobase")', and for packages 'citation("pkgname")'.
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: IRanges
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: S4Vectors
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'S4Vectors'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:base':
+## 
+##     expand.grid
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'IRanges'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:grDevices':
+## 
+##     windows
+\end{verbatim}
+
+\begin{verbatim}
+## 
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(}\StringTok{"GO.db"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(}\StringTok{"ggplot2"}\NormalTok{)}
+\KeywordTok{library}\NormalTok{(}\StringTok{"limma"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'limma'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:BiocGenerics':
+## 
+##     plotMA
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(}\StringTok{"biomaRt"}\NormalTok{)}
+\KeywordTok{library}\NormalTok{(}\StringTok{"plyr"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'plyr'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:IRanges':
+## 
+##     desc
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:S4Vectors':
+## 
+##     rename
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(}\StringTok{"dplyr"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'dplyr'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:plyr':
+## 
+##     arrange, count, desc, failwith, id, mutate, rename, summarise,
+##     summarize
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:biomaRt':
+## 
+##     select
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:AnnotationDbi':
+## 
+##     select
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:IRanges':
+## 
+##     collapse, desc, intersect, setdiff, slice, union
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:S4Vectors':
+## 
+##     first, intersect, rename, setdiff, setequal, union
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:Biobase':
+## 
+##     combine
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:BiocGenerics':
+## 
+##     combine, intersect, setdiff, union
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(}\StringTok{"edgeR"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Данные для анализа: Transcription profiling by high throughput
+sequencing in basal airway cells of smokers and non-smokers Ссылка:
+\url{https://www.ebi.ac.uk/gxa/experiments/E-GEOD-47718/}
+
+Загружаем данные
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{origin_table <-}\StringTok{ }\KeywordTok{read.table}\NormalTok{(}\StringTok{"data/E-GEOD-47718-raw-counts.tsv"}\NormalTok{, }\DataTypeTok{sep=}\StringTok{"}\CharTok{\textbackslash{}t}\StringTok{"}\NormalTok{, }\DataTypeTok{header=}\OtherTok{TRUE}\NormalTok{)}
+\NormalTok{design_table <-}\StringTok{ }\KeywordTok{read.table}\NormalTok{(}\StringTok{"data/E-GEOD-47718-experiment-design.tsv"}\NormalTok{, }\DataTypeTok{sep=}\StringTok{"}\CharTok{\textbackslash{}t}\StringTok{"}\NormalTok{, }\DataTypeTok{header=}\OtherTok{TRUE}\NormalTok{)}
+\NormalTok{counts_table <-}\StringTok{ }\NormalTok{origin_table}
+
+\NormalTok{col_for_research =}\StringTok{ "Sample.Characteristic.clinical.information."}
+\end{Highlighting}
+\end{Shaded}
+
+Таблица каунтов:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{head}\NormalTok{(origin_table)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##           Gene.ID Gene.Name SRR886603 SRR886600 SRR886569 SRR886566 SRR886582
+## 1 ENSG00000000003    TSPAN6       169        78       163       187        48
+## 2 ENSG00000000005      TNMD         0         0         0         0         0
+## 3 ENSG00000000419      DPM1       296       471       411       387       202
+## 4 ENSG00000000457     SCYL3        54        47        67        61        25
+## 5 ENSG00000000460  C1orf112       154        13        54       112         5
+## 6 ENSG00000000938       FGR         0         0         0         1         0
+##   SRR886606 SRR886593 SRR886586 SRR886565 SRR886607 SRR886615 SRR886577
+## 1       143       108       107       208       106       143       143
+## 2         0         0         0         0         0         0         0
+## 3       246       426       278       337       222       252       341
+## 4        52        43        29        49        42        60        65
+## 5        32        16        11       109        40        98        81
+## 6         0         1         0         1         3         2         0
+##   SRR886602 SRR886578 SRR886594 SRR886567 SRR886605 SRR886580 SRR886587
+## 1       174       152        29       155       136       128       103
+## 2         0         0         0         0         0         0         0
+## 3       293       297       102       298       255       414       287
+## 4        64        75        14        44        42        50        36
+## 5       169        85         3        97        30         8        14
+## 6         2         1         1         2         0         3         0
+##   SRR886591 SRR886616 SRR886579 SRR886583 SRR886592 SRR886584 SRR886613
+## 1        41       123       107       193       120       209        44
+## 2         0         0         0         0         0         0         0
+## 3        97       190       259       359       388       357       177
+## 4        19        48        46        75        43        59        43
+## 5        17        75        71       175        30       167         6
+## 6         0         0         0         2         4         0         0
+##   SRR886585 SRR886604 SRR886572 SRR886581 SRR886590 SRR886570 SRR886595
+## 1       167       132       204       130       175       140        94
+## 2         0         0         0         0         0         0         0
+## 3       312       268       405       454       324       344       310
+## 4        54        48        95        57        53        47        29
+## 5       153       122       105         9        48        55         5
+## 6         0         2         2         4         2         2         1
+##   SRR886608 SRR886574 SRR886588 SRR886611 SRR886610 SRR886599 SRR886575
+## 1       103       179        71        90        90        87       177
+## 2         0         0         0         0         0         0         0
+## 3       328       411       156       305       329       452       399
+## 4        62        76        17        50        63        43        47
+## 5        32        92         7        17        23         8       111
+## 6         4         0         0         5         3         0         0
+##   SRR886597 SRR886568 SRR886573 SRR886598 SRR886596 SRR886601 SRR886589
+## 1        35       155       138        84        85        29       161
+## 2         0         0         0         0         0         0         0
+## 3       109       402       286       409       341       139       342
+## 4        17        46        50        50        35        16        56
+## 5         1        67        93         9         5         5        60
+## 6         1         3         1         2         0         0         5
+##   SRR886576 SRR886609 SRR886614 SRR886612 SRR886571
+## 1       171        84       131        86       212
+## 2         0         0         0         0         0
+## 3       344       327       241       326       412
+## 4        57        60        83        67        80
+## 5        92        29        90        21       125
+## 6         3         6         1         1         1
+\end{verbatim}
+
+Таблица дизайна
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{head}\NormalTok{(design_table)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##         Run Sample.Characteristic.cell.type.
+## 1 SRR886565                airway basal cell
+## 2 SRR886566                airway basal cell
+## 3 SRR886567                airway basal cell
+## 4 SRR886568                airway basal cell
+## 5 SRR886569                airway basal cell
+## 6 SRR886570                airway basal cell
+##   Sample.Characteristic.Ontology.Term.cell.type.
+## 1      http://purl.obolibrary.org/obo/CL_0002633
+## 2      http://purl.obolibrary.org/obo/CL_0002633
+## 3      http://purl.obolibrary.org/obo/CL_0002633
+## 4      http://purl.obolibrary.org/obo/CL_0002633
+## 5      http://purl.obolibrary.org/obo/CL_0002633
+## 6      http://purl.obolibrary.org/obo/CL_0002633
+##   Sample.Characteristic.clinical.information.
+## 1                                  non-smoker
+## 2                                  non-smoker
+## 3                                  non-smoker
+## 4                                  non-smoker
+## 5                                  non-smoker
+## 6                                  non-smoker
+##   Sample.Characteristic.Ontology.Term.clinical.information.
+## 1                                                        NA
+## 2                                                        NA
+## 3                                                        NA
+## 4                                                        NA
+## 5                                                        NA
+## 6                                                        NA
+##   Sample.Characteristic.disease. Sample.Characteristic.Ontology.Term.disease.
+## 1                         normal  http://purl.obolibrary.org/obo/PATO_0000461
+## 2                         normal  http://purl.obolibrary.org/obo/PATO_0000461
+## 3                         normal  http://purl.obolibrary.org/obo/PATO_0000461
+## 4                         normal  http://purl.obolibrary.org/obo/PATO_0000461
+## 5                         normal  http://purl.obolibrary.org/obo/PATO_0000461
+## 6                         normal  http://purl.obolibrary.org/obo/PATO_0000461
+##   Sample.Characteristic.organism. Sample.Characteristic.Ontology.Term.organism.
+## 1                    Homo sapiens http://purl.obolibrary.org/obo/NCBITaxon_9606
+## 2                    Homo sapiens http://purl.obolibrary.org/obo/NCBITaxon_9606
+## 3                    Homo sapiens http://purl.obolibrary.org/obo/NCBITaxon_9606
+## 4                    Homo sapiens http://purl.obolibrary.org/obo/NCBITaxon_9606
+## 5                    Homo sapiens http://purl.obolibrary.org/obo/NCBITaxon_9606
+## 6                    Homo sapiens http://purl.obolibrary.org/obo/NCBITaxon_9606
+##   Sample.Characteristic.organism.part.
+## 1                   respiratory airway
+## 2                   respiratory airway
+## 3                   respiratory airway
+## 4                   respiratory airway
+## 5                   respiratory airway
+## 6                   respiratory airway
+##   Sample.Characteristic.Ontology.Term.organism.part.
+## 1      http://purl.obolibrary.org/obo/UBERON_0001005
+## 2      http://purl.obolibrary.org/obo/UBERON_0001005
+## 3      http://purl.obolibrary.org/obo/UBERON_0001005
+## 4      http://purl.obolibrary.org/obo/UBERON_0001005
+## 5      http://purl.obolibrary.org/obo/UBERON_0001005
+## 6      http://purl.obolibrary.org/obo/UBERON_0001005
+##   Factor.Value.clinical.information.
+## 1                         non-smoker
+## 2                         non-smoker
+## 3                         non-smoker
+## 4                         non-smoker
+## 5                         non-smoker
+## 6                         non-smoker
+##   Factor.Value.Ontology.Term.clinical.information. Analysed
+## 1                                               NA      Yes
+## 2                                               NA      Yes
+## 3                                               NA      Yes
+## 4                                               NA      Yes
+## 5                                               NA      Yes
+## 6                                               NA      Yes
+\end{verbatim}
+
+Далее: переименуем столбцы таблицы каунтов короткими именами и на всякий
+случай запишем их в таблицу дизайна. И запишем Gene.ID в таблице каунтов
+как имена строк
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{design_table}\OperatorTok{$}\NormalTok{short_name <-}\StringTok{ }\KeywordTok{rep}\NormalTok{(}\OtherTok{NaN}\NormalTok{, }\KeywordTok{nrow}\NormalTok{(design_table))}
+\NormalTok{diseases_list <-}\StringTok{ }\KeywordTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{, }\KeywordTok{length}\NormalTok{(}\KeywordTok{unique}\NormalTok{(design_table[[col_for_research]])))}
+\KeywordTok{names}\NormalTok{(diseases_list) <-}\StringTok{ }\KeywordTok{unique}\NormalTok{(design_table[[col_for_research]])}
+
+
+\NormalTok{cols_names <-}\StringTok{ }\KeywordTok{colnames}\NormalTok{(counts_table)}
+\NormalTok{new_names <-}\StringTok{ }\KeywordTok{c}\NormalTok{()}
+
+\ControlFlowTok{for}\NormalTok{ (col }\ControlFlowTok{in}\NormalTok{ cols_names)\{}
+    \ControlFlowTok{if}\NormalTok{ (}\KeywordTok{length}\NormalTok{(design_table[design_table}\OperatorTok{$}\NormalTok{Run }\OperatorTok{==}\StringTok{ }\NormalTok{col,}\DecValTok{1}\NormalTok{]) }\OperatorTok{!=}\StringTok{ }\DecValTok{0}\NormalTok{) \{}
+\NormalTok{      disease <-}\StringTok{ }\NormalTok{design_table[design_table}\OperatorTok{$}\NormalTok{Run }\OperatorTok{==}\StringTok{ }\NormalTok{col, col_for_research]}
+\NormalTok{      diseases_list[disease] <-}\StringTok{ }\NormalTok{diseases_list[disease] }\OperatorTok{+}\StringTok{ }\DecValTok{1}
+\NormalTok{      new_name <-}\StringTok{ }\KeywordTok{paste}\NormalTok{(}\KeywordTok{toupper}\NormalTok{(}\KeywordTok{substr}\NormalTok{(disease,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{)), }\KeywordTok{toString}\NormalTok{(diseases_list[disease]),}\DataTypeTok{sep =} \StringTok{"."}\NormalTok{)}
+\NormalTok{      new_names <-}\StringTok{  }\KeywordTok{append}\NormalTok{(new_names, new_name)}
+\NormalTok{      design_table[design_table}\OperatorTok{$}\NormalTok{Run }\OperatorTok{==}\StringTok{ }\NormalTok{col, }\StringTok{"short_name"}\NormalTok{] <-}\StringTok{ }\NormalTok{new_name}
+\NormalTok{    \} }\ControlFlowTok{else}\NormalTok{ \{}
+\NormalTok{      new_names <-}\StringTok{  }\KeywordTok{append}\NormalTok{(new_names, col)}
+\NormalTok{    \}}
+\NormalTok{\}}
+
+\KeywordTok{names}\NormalTok{(counts_table) <-}\StringTok{ }\NormalTok{new_names}
+\KeywordTok{rownames}\NormalTok{(counts_table) <-}\StringTok{ }\NormalTok{counts_table}\OperatorTok{$}\NormalTok{Gene.ID}
+
+\NormalTok{counts_table <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(counts_table, }\DataTypeTok{select =} \KeywordTok{c}\NormalTok{(}\OperatorTok{-}\NormalTok{Gene.ID, }\OperatorTok{-}\NormalTok{Gene.Name))}
+\NormalTok{counts_table <-}\StringTok{ }\NormalTok{counts_table[ }\KeywordTok{order}\NormalTok{(}\KeywordTok{rownames}\NormalTok{(counts_table)), ]}
+\KeywordTok{head}\NormalTok{(counts_table)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                 S.1 S.2 N.1 N.2 N.3 S.3 N.4 N.5 N.6 S.4 S.5 N.7 S.6 N.8 N.9
+## ENSG00000000003 169  78 163 187  48 143 108 107 208 106 143 143 174 152  29
+## ENSG00000000005   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+## ENSG00000000419 296 471 411 387 202 246 426 278 337 222 252 341 293 297 102
+## ENSG00000000457  54  47  67  61  25  52  43  29  49  42  60  65  64  75  14
+## ENSG00000000460 154  13  54 112   5  32  16  11 109  40  98  81 169  85   3
+## ENSG00000000938   0   0   0   1   0   0   1   0   1   3   2   0   2   1   1
+##                 N.10 S.7 N.11 N.12 N.13 S.8 N.14 N.15 N.16 N.17 S.9 N.18 S.10
+## ENSG00000000003  155 136  128  103   41 123  107  193  120  209  44  167  132
+## ENSG00000000005    0   0    0    0    0   0    0    0    0    0   0    0    0
+## ENSG00000000419  298 255  414  287   97 190  259  359  388  357 177  312  268
+## ENSG00000000457   44  42   50   36   19  48   46   75   43   59  43   54   48
+## ENSG00000000460   97  30    8   14   17  75   71  175   30  167   6  153  122
+## ENSG00000000938    2   0    3    0    0   0    0    2    4    0   0    0    2
+##                 N.19 N.20 N.21 N.22 S.11 S.12 N.23 N.24 S.13 S.14 S.15 N.25
+## ENSG00000000003  204  130  175  140   94  103  179   71   90   90   87  177
+## ENSG00000000005    0    0    0    0    0    0    0    0    0    0    0    0
+## ENSG00000000419  405  454  324  344  310  328  411  156  305  329  452  399
+## ENSG00000000457   95   57   53   47   29   62   76   17   50   63   43   47
+## ENSG00000000460  105    9   48   55    5   32   92    7   17   23    8  111
+## ENSG00000000938    2    4    2    2    1    4    0    0    5    3    0    0
+##                 S.16 N.26 N.27 S.17 S.18 S.19 N.28 N.29 S.20 S.21 S.22 N.30
+## ENSG00000000003   35  155  138   84   85   29  161  171   84  131   86  212
+## ENSG00000000005    0    0    0    0    0    0    0    0    0    0    0    0
+## ENSG00000000419  109  402  286  409  341  139  342  344  327  241  326  412
+## ENSG00000000457   17   46   50   50   35   16   56   57   60   83   67   80
+## ENSG00000000460    1   67   93    9    5    5   60   92   29   90   21  125
+## ENSG00000000938    1    3    1    2    0    0    5    3    6    1    1    1
+\end{verbatim}
+
+У нас есть два класса для анализа. Выберем их
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{diseases_short <-}\StringTok{ }\KeywordTok{unique}\NormalTok{(}\KeywordTok{substring}\NormalTok{(}\KeywordTok{colnames}\NormalTok{(counts_table),}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{))}
+\NormalTok{diseases_list}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## non-smoker     smoker 
+##         30         22
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{diseases_short}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "S" "N"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{what_to_compare <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"S"}\NormalTok{, }\StringTok{"N"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Выделим их в отдельную таблицу (это будет та же таблица, но эта функция
+на случай, если в данных будет больше двух классов)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{cur_cols <-}\StringTok{ }\KeywordTok{colnames}\NormalTok{(counts_table)[(}\KeywordTok{substring}\NormalTok{(}\KeywordTok{colnames}\NormalTok{(counts_table),}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{) }\OperatorTok{==}\StringTok{ }\NormalTok{what_to_compare[}\DecValTok{1}\NormalTok{] }
+                                    \OperatorTok{|}\StringTok{ }\KeywordTok{substring}\NormalTok{(}\KeywordTok{colnames}\NormalTok{(counts_table),}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{) }\OperatorTok{==}\StringTok{ }\NormalTok{what_to_compare[}\DecValTok{2}\NormalTok{])]}
+
+\NormalTok{cur_table <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(counts_table, }\DataTypeTok{select =} \KeywordTok{c}\NormalTok{(cur_cols))}
+\KeywordTok{head}\NormalTok{(cur_table)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                 S.1 S.2 N.1 N.2 N.3 S.3 N.4 N.5 N.6 S.4 S.5 N.7 S.6 N.8 N.9
+## ENSG00000000003 169  78 163 187  48 143 108 107 208 106 143 143 174 152  29
+## ENSG00000000005   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+## ENSG00000000419 296 471 411 387 202 246 426 278 337 222 252 341 293 297 102
+## ENSG00000000457  54  47  67  61  25  52  43  29  49  42  60  65  64  75  14
+## ENSG00000000460 154  13  54 112   5  32  16  11 109  40  98  81 169  85   3
+## ENSG00000000938   0   0   0   1   0   0   1   0   1   3   2   0   2   1   1
+##                 N.10 S.7 N.11 N.12 N.13 S.8 N.14 N.15 N.16 N.17 S.9 N.18 S.10
+## ENSG00000000003  155 136  128  103   41 123  107  193  120  209  44  167  132
+## ENSG00000000005    0   0    0    0    0   0    0    0    0    0   0    0    0
+## ENSG00000000419  298 255  414  287   97 190  259  359  388  357 177  312  268
+## ENSG00000000457   44  42   50   36   19  48   46   75   43   59  43   54   48
+## ENSG00000000460   97  30    8   14   17  75   71  175   30  167   6  153  122
+## ENSG00000000938    2   0    3    0    0   0    0    2    4    0   0    0    2
+##                 N.19 N.20 N.21 N.22 S.11 S.12 N.23 N.24 S.13 S.14 S.15 N.25
+## ENSG00000000003  204  130  175  140   94  103  179   71   90   90   87  177
+## ENSG00000000005    0    0    0    0    0    0    0    0    0    0    0    0
+## ENSG00000000419  405  454  324  344  310  328  411  156  305  329  452  399
+## ENSG00000000457   95   57   53   47   29   62   76   17   50   63   43   47
+## ENSG00000000460  105    9   48   55    5   32   92    7   17   23    8  111
+## ENSG00000000938    2    4    2    2    1    4    0    0    5    3    0    0
+##                 S.16 N.26 N.27 S.17 S.18 S.19 N.28 N.29 S.20 S.21 S.22 N.30
+## ENSG00000000003   35  155  138   84   85   29  161  171   84  131   86  212
+## ENSG00000000005    0    0    0    0    0    0    0    0    0    0    0    0
+## ENSG00000000419  109  402  286  409  341  139  342  344  327  241  326  412
+## ENSG00000000457   17   46   50   50   35   16   56   57   60   83   67   80
+## ENSG00000000460    1   67   93    9    5    5   60   92   29   90   21  125
+## ENSG00000000938    1    3    1    2    0    0    5    3    6    1    1    1
+\end{verbatim}
+
+И создадим вектор групп
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{cur_lables <-}\StringTok{ }\KeywordTok{substring}\NormalTok{(}\KeywordTok{colnames}\NormalTok{(cur_table),}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{)}
+\NormalTok{cur_lables}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "S" "S" "N" "N" "N" "S" "N" "N" "N" "S" "S" "N" "S" "N" "N" "N" "S" "N" "N"
+## [20] "N" "S" "N" "N" "N" "N" "S" "N" "S" "N" "N" "N" "N" "S" "S" "N" "N" "S" "S"
+## [39] "S" "N" "S" "N" "N" "S" "S" "S" "N" "N" "S" "S" "S" "N"
+\end{verbatim}
+
+Далее проведём расчёт pca и выведем barplot по нему
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pca <-}\StringTok{ }\KeywordTok{prcomp}\NormalTok{(}\KeywordTok{t}\NormalTok{(cur_table))}
+\NormalTok{pc <-}\StringTok{ }\KeywordTok{round}\NormalTok{(pca}\OperatorTok{$}\NormalTok{sdev}\OperatorTok{^}\DecValTok{2}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(pca}\OperatorTok{$}\NormalTok{sdev}\OperatorTok{^}\DecValTok{2}\NormalTok{)}\OperatorTok{*}\DecValTok{100}\NormalTok{,}\DecValTok{1}\NormalTok{)}
+
+\KeywordTok{barplot}\NormalTok{(pc, }\DataTypeTok{xlab =} \StringTok{'PC number'}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{'% of cariation PC accounts for'}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{report_files/figure-latex/unnamed-chunk-9-1.pdf}
+
+И точечный график по PC1 и PC2
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pca.data <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{Type=}\NormalTok{cur_lables, }\DataTypeTok{PC1=}\NormalTok{pca}\OperatorTok{$}\NormalTok{x[,}\DecValTok{1}\NormalTok{], }\DataTypeTok{PC2=}\NormalTok{pca}\OperatorTok{$}\NormalTok{x[,}\DecValTok{2}\NormalTok{], }\DataTypeTok{PC3=}\NormalTok{pca}\OperatorTok{$}\NormalTok{x[,}\DecValTok{3}\NormalTok{])}
+\KeywordTok{ggplot}\NormalTok{(pca.data, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x=}\NormalTok{PC1, }\DataTypeTok{y=}\NormalTok{PC2)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_point}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{col=}\NormalTok{Type)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{x=}\StringTok{"PC1"}\NormalTok{, }\DataTypeTok{y=}\StringTok{"PC2"}\NormalTok{, }\DataTypeTok{col=}\StringTok{"Type"}\NormalTok{) }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{legend.position =} \StringTok{"bottom"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{report_files/figure-latex/unnamed-chunk-10-1.pdf}
+
+И иерархическую кластеризацию по таблице текущих классов
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dist_data <-}\StringTok{ }\KeywordTok{dist}\NormalTok{(}\KeywordTok{t}\NormalTok{(cur_table), }\DataTypeTok{method =} \StringTok{"euclidean"}\NormalTok{)}
+\NormalTok{clust1 <-}\KeywordTok{hclust}\NormalTok{(dist_data)}
+\KeywordTok{plot}\NormalTok{(clust1)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{report_files/figure-latex/unnamed-chunk-11-1.pdf}
+
+И MDSplot по таблице текущих классов (можно и по всей таблице каунтов,
+но это займёт много времени)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plotMDS}\NormalTok{(cur_table)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{report_files/figure-latex/unnamed-chunk-12-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#plotMDS(counts_table)}
+\end{Highlighting}
+\end{Shaded}
+
+Далее загрузим аннотацию из hsapiens\_gene\_ensembl
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mart <-}\StringTok{ }\KeywordTok{useMart}\NormalTok{(}\StringTok{"ENSEMBL_MART_ENSEMBL"}\NormalTok{)}
+\CommentTok{#listDatasets(mart = mart)}
+
+\NormalTok{mart <-}\StringTok{ }\KeywordTok{useDataset}\NormalTok{(}\StringTok{"hsapiens_gene_ensembl"}\NormalTok{, mart)}
+\NormalTok{attributes <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"ensembl_gene_id"}\NormalTok{, }\StringTok{"description"}\NormalTok{, }\StringTok{"chromosome_name"}\NormalTok{,}
+                \StringTok{"start_position"}\NormalTok{, }\StringTok{"end_position"}\NormalTok{, }\StringTok{"gene_biotype"}\NormalTok{,}
+                \StringTok{"strand"}\NormalTok{, }\StringTok{"hgnc_symbol"}\NormalTok{, }\StringTok{"entrezgene_id"}\NormalTok{)}
+
+\NormalTok{filters <-}\StringTok{ "ensembl_gene_id"}
+\NormalTok{genes_annotation <-}\StringTok{ }\KeywordTok{getBM}\NormalTok{(}\DataTypeTok{attributes =}\NormalTok{ attributes, }\DataTypeTok{filters =}\NormalTok{ filters, }\DataTypeTok{values =} \KeywordTok{rownames}\NormalTok{(cur_table), }\DataTypeTok{mart =}\NormalTok{ mart)}
+\KeywordTok{head}\NormalTok{(genes_annotation)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   ensembl_gene_id
+## 1 ENSG00000000003
+## 2 ENSG00000000005
+## 3 ENSG00000000419
+## 4 ENSG00000000457
+## 5 ENSG00000000460
+## 6 ENSG00000000938
+##                                                                                      description
+## 1                                              tetraspanin 6 [Source:HGNC Symbol;Acc:HGNC:11858]
+## 2                                                tenomodulin [Source:HGNC Symbol;Acc:HGNC:17757]
+## 3 dolichyl-phosphate mannosyltransferase subunit 1, catalytic [Source:HGNC Symbol;Acc:HGNC:3005]
+## 4                                   SCY1 like pseudokinase 3 [Source:HGNC Symbol;Acc:HGNC:19285]
+## 5                        chromosome 1 open reading frame 112 [Source:HGNC Symbol;Acc:HGNC:25565]
+## 6              FGR proto-oncogene, Src family tyrosine kinase [Source:HGNC Symbol;Acc:HGNC:3697]
+##   chromosome_name start_position end_position   gene_biotype strand hgnc_symbol
+## 1               X      100627108    100639991 protein_coding     -1      TSPAN6
+## 2               X      100584936    100599885 protein_coding      1        TNMD
+## 3              20       50934867     50958555 protein_coding     -1        DPM1
+## 4               1      169849631    169894267 protein_coding     -1       SCYL3
+## 5               1      169662007    169854080 protein_coding      1    C1orf112
+## 6               1       27612064     27635185 protein_coding     -1         FGR
+##   entrezgene_id
+## 1          7105
+## 2         64102
+## 3          8813
+## 4         57147
+## 5         55732
+## 6          2268
+\end{verbatim}
+
+Проверяем количество генов и совпадения между таблицей текущих классов и
+аннотацией
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{paste}\NormalTok{(}\StringTok{"In annotation: "}\NormalTok{, }\KeywordTok{toString}\NormalTok{(}\KeywordTok{length}\NormalTok{(genes_annotation}\OperatorTok{$}\NormalTok{ensembl_gene_id)))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "In annotation:  58595"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{paste}\NormalTok{(}\StringTok{"In data: "}\NormalTok{, }\KeywordTok{toString}\NormalTok{(}\KeywordTok{length}\NormalTok{(}\KeywordTok{rownames}\NormalTok{(cur_table))))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "In data:  58735"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{paste}\NormalTok{(}\StringTok{"Intersect: "}\NormalTok{, }\KeywordTok{toString}\NormalTok{(}\KeywordTok{length}\NormalTok{(}\KeywordTok{intersect}\NormalTok{(}\KeywordTok{rownames}\NormalTok{(cur_table), genes_annotation}\OperatorTok{$}\NormalTok{ensembl_gene_id))))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Intersect:  58444"
+\end{verbatim}
+
+Судя по всему, эта база старая и не описывает все нужные нам гены.
+Выхода два: либо используем другой пакет (например: org.Hs.eg.db), либо
+довольствуемся тем, что есть, но проверяем в конце, не попали ли в топ
+результатов неаннотированные гены
+
+Выберем второй вариант и подровняем таблицы, удалим дупликаты из
+аннотации (тк для функции необходимо совпадение размеров)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{cur_table_cut <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(cur_table, }\KeywordTok{row.names}\NormalTok{(cur_table) }\OperatorTok{%in%}\StringTok{ }\NormalTok{genes_annotation}\OperatorTok{$}\NormalTok{ensembl_gene_id)}
+\NormalTok{annotation_cut <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(genes_annotation, genes_annotation}\OperatorTok{$}\NormalTok{ensembl_gene_id }\OperatorTok{%in%}\StringTok{ }\KeywordTok{row.names}\NormalTok{(cur_table_cut))}
+\KeywordTok{paste}\NormalTok{(}\StringTok{"In annotation after cut: "}\NormalTok{, }\KeywordTok{toString}\NormalTok{(}\KeywordTok{length}\NormalTok{(annotation_cut}\OperatorTok{$}\NormalTok{ensembl_gene_id)))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "In annotation after cut:  58595"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{annotation_cut <-}\StringTok{ }\NormalTok{annotation_cut }\OperatorTok{%>%}\StringTok{ }\KeywordTok{distinct}\NormalTok{(ensembl_gene_id, }\DataTypeTok{.keep_all =} \OtherTok{TRUE}\NormalTok{)}
+\KeywordTok{paste}\NormalTok{(}\StringTok{"In annotation after drop dupl: "}\NormalTok{, }\KeywordTok{toString}\NormalTok{(}\KeywordTok{length}\NormalTok{(annotation_cut}\OperatorTok{$}\NormalTok{ensembl_gene_id)))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "In annotation after drop dupl:  58444"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{paste}\NormalTok{(}\StringTok{"In data after cut: "}\NormalTok{, }\KeywordTok{toString}\NormalTok{(}\KeywordTok{length}\NormalTok{(}\KeywordTok{rownames}\NormalTok{(cur_table_cut))))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "In data after cut:  58444"
+\end{verbatim}
+
+Проведём анализ диф.экпрессии сначала без аннотации по полной таблице
+текущих классов
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# создание листа}
+\NormalTok{DGE <-}\StringTok{ }\KeywordTok{DGEList}\NormalTok{(}\DataTypeTok{counts =}\NormalTok{ cur_table, }\DataTypeTok{group =}\NormalTok{ cur_lables)}
+
+\CommentTok{# нормализация методом TMM}
+\NormalTok{DGE <-}\StringTok{ }\KeywordTok{calcNormFactors}\NormalTok{(DGE, }\DataTypeTok{method =} \StringTok{"TMM"}\NormalTok{)}
+
+\CommentTok{# дисперсия общая и по каждому гену}
+\NormalTok{DGE <-}\StringTok{ }\KeywordTok{estimateCommonDisp}\NormalTok{(DGE)}
+\NormalTok{DGE <-}\StringTok{ }\KeywordTok{estimateTagwiseDisp}\NormalTok{(DGE)}
+
+\CommentTok{# тест на диф.экспрессию}
+\NormalTok{DE_res <-}\StringTok{ }\KeywordTok{exactTest}\NormalTok{(DGE)}
+
+\NormalTok{DE_res_top_table <-}\StringTok{ }\KeywordTok{topTags}\NormalTok{(DE_res)}\OperatorTok{$}\NormalTok{table}
+\NormalTok{DE_res_top_table}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                    logFC    logCPM       PValue          FDR
+## ENSG00000285976 3.385777 2.8458409 3.364009e-83 1.975851e-78
+## ENSG00000243449 4.062038 0.7358122 4.093274e-76 1.202092e-71
+## ENSG00000102931 2.919822 1.3136195 6.049428e-68 1.184377e-63
+## ENSG00000188483 2.333470 2.3334523 9.440994e-67 1.386292e-62
+## ENSG00000141933 3.795001 0.2702141 2.221416e-49 2.308037e-45
+## ENSG00000168282 4.441233 0.2706755 2.357746e-49 2.308037e-45
+## ENSG00000101084 1.951124 2.3011217 4.090752e-49 3.432433e-45
+## ENSG00000140406 1.249322 5.2770088 1.744112e-46 1.280505e-42
+## ENSG00000107872 2.401879 1.9915327 1.499049e-45 9.782963e-42
+## ENSG00000278922 3.500463 0.1577379 2.378648e-40 1.397099e-36
+\end{verbatim}
+
+И то же самое с аннотацией по обрезанной таблице
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{DGE_cut <-}\StringTok{ }\KeywordTok{DGEList}\NormalTok{(}\DataTypeTok{counts =}\NormalTok{ cur_table_cut, }\DataTypeTok{genes =}\NormalTok{ annotation_cut, }\DataTypeTok{group =}\NormalTok{ cur_lables)}
+\NormalTok{DGE_cut <-}\StringTok{ }\KeywordTok{calcNormFactors}\NormalTok{(DGE_cut, }\DataTypeTok{method =} \StringTok{"TMM"}\NormalTok{)}
+\NormalTok{DGE_cut <-}\StringTok{ }\KeywordTok{estimateCommonDisp}\NormalTok{(DGE_cut)}
+\NormalTok{DGE_cut <-}\StringTok{ }\KeywordTok{estimateTagwiseDisp}\NormalTok{(DGE_cut)}
+\NormalTok{DE_res_cut <-}\StringTok{ }\KeywordTok{exactTest}\NormalTok{(DGE_cut)}
+
+\NormalTok{DE_res_top_table_cut <-}\StringTok{ }\KeywordTok{topTags}\NormalTok{(DE_res_cut)}\OperatorTok{$}\NormalTok{table}
+\NormalTok{DE_res_top_table_cut}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                 ensembl_gene_id
+## ENSG00000285976 ENSG00000285976
+## ENSG00000243449 ENSG00000243449
+## ENSG00000102931 ENSG00000102931
+## ENSG00000188483 ENSG00000188483
+## ENSG00000141933 ENSG00000141933
+## ENSG00000168282 ENSG00000168282
+## ENSG00000101084 ENSG00000101084
+## ENSG00000140406 ENSG00000140406
+## ENSG00000107872 ENSG00000107872
+## ENSG00000278922 ENSG00000278922
+##                                                                                                               description
+## ENSG00000285976                                                                                             novel protein
+## ENSG00000243449                                    chromosome 4 open reading frame 48 [Source:HGNC Symbol;Acc:HGNC:34437]
+## ENSG00000102931                 ADP ribosylation factor like GTPase 2 binding protein [Source:HGNC Symbol;Acc:HGNC:17146]
+## ENSG00000188483                                       immediate early response 5 like [Source:HGNC Symbol;Acc:HGNC:23679]
+## ENSG00000141933                             tubulin polyglutamylase complex subunit 1 [Source:HGNC Symbol;Acc:HGNC:25058]
+## ENSG00000168282 alpha-1,6-mannosyl-glycoprotein 2-beta-N-acetylglucosaminyltransferase [Source:HGNC Symbol;Acc:HGNC:7045]
+## ENSG00000101084                                               RAB5 interacting factor [Source:HGNC Symbol;Acc:HGNC:15870]
+## ENSG00000140406                                         talin rod domain containing 1 [Source:HGNC Symbol;Acc:HGNC:13519]
+## ENSG00000107872                              F-box and leucine rich repeat protein 15 [Source:HGNC Symbol;Acc:HGNC:28155]
+## ENSG00000278922                                                                                          novel transcript
+##                 chromosome_name start_position end_position   gene_biotype
+## ENSG00000285976               6       63572472     63583587 protein_coding
+## ENSG00000243449               4        2041993      2043970 protein_coding
+## ENSG00000102931              16       57245259     57253635 protein_coding
+## ENSG00000188483               9      129175552    129178261 protein_coding
+## ENSG00000141933              19         507497       519654 protein_coding
+## ENSG00000168282              14       49620799     49623481 protein_coding
+## ENSG00000101084              20       36605779     36612557 protein_coding
+## ENSG00000140406              15       81000923     81005788 protein_coding
+## ENSG00000107872              10      102419189    102423136 protein_coding
+## ENSG00000278922              16       30526918     30528294            TEC
+##                 strand hgnc_symbol entrezgene_id    logFC    logCPM
+## ENSG00000285976      1                        NA 3.385641 2.8459422
+## ENSG00000243449      1     C4orf48        401115 4.061919 0.7359594
+## ENSG00000102931      1      ARL2BP         23568 2.919690 1.3137569
+## ENSG00000188483     -1       IER5L        389792 2.333338 2.3336045
+## ENSG00000141933      1       TPGS1         91978 3.794875 0.2703689
+## ENSG00000168282      1       MGAT2          4247 4.441125 0.2708495
+## ENSG00000101084      1      RAB5IF         55969 1.950954 2.3012652
+## ENSG00000140406      1      TLNRD1         59274 1.249159 5.2771329
+## ENSG00000107872      1      FBXL15         79176 2.401716 1.9916630
+## ENSG00000278922      1                        NA 3.500324 0.1578795
+##                       PValue          FDR
+## ENSG00000285976 3.431904e-83 2.005742e-78
+## ENSG00000243449 4.174403e-76 1.219844e-71
+## ENSG00000102931 6.048301e-68 1.178290e-63
+## ENSG00000188483 1.021044e-66 1.491848e-62
+## ENSG00000141933 2.287654e-49 2.372486e-45
+## ENSG00000168282 2.435651e-49 2.372486e-45
+## ENSG00000101084 4.226438e-49 3.528714e-45
+## ENSG00000140406 1.744253e-46 1.274264e-42
+## ENSG00000107872 1.536918e-45 9.980404e-42
+## ENSG00000278922 2.333296e-40 1.363672e-36
+\end{verbatim}
+
+Сравним топ-гены по анализу с аннотацией и без
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{rownames}\NormalTok{(DE_res_top_table_cut) }\OperatorTok{==}\StringTok{ }\KeywordTok{rownames}\NormalTok{(DE_res_top_table)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
+\end{verbatim}
+
+Получились те же гены, значит, можно пользоваться результатами анализа с
+аннотацией Выведем их
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{DE_res_top_table_cut}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                 ensembl_gene_id
+## ENSG00000285976 ENSG00000285976
+## ENSG00000243449 ENSG00000243449
+## ENSG00000102931 ENSG00000102931
+## ENSG00000188483 ENSG00000188483
+## ENSG00000141933 ENSG00000141933
+## ENSG00000168282 ENSG00000168282
+## ENSG00000101084 ENSG00000101084
+## ENSG00000140406 ENSG00000140406
+## ENSG00000107872 ENSG00000107872
+## ENSG00000278922 ENSG00000278922
+##                                                                                                               description
+## ENSG00000285976                                                                                             novel protein
+## ENSG00000243449                                    chromosome 4 open reading frame 48 [Source:HGNC Symbol;Acc:HGNC:34437]
+## ENSG00000102931                 ADP ribosylation factor like GTPase 2 binding protein [Source:HGNC Symbol;Acc:HGNC:17146]
+## ENSG00000188483                                       immediate early response 5 like [Source:HGNC Symbol;Acc:HGNC:23679]
+## ENSG00000141933                             tubulin polyglutamylase complex subunit 1 [Source:HGNC Symbol;Acc:HGNC:25058]
+## ENSG00000168282 alpha-1,6-mannosyl-glycoprotein 2-beta-N-acetylglucosaminyltransferase [Source:HGNC Symbol;Acc:HGNC:7045]
+## ENSG00000101084                                               RAB5 interacting factor [Source:HGNC Symbol;Acc:HGNC:15870]
+## ENSG00000140406                                         talin rod domain containing 1 [Source:HGNC Symbol;Acc:HGNC:13519]
+## ENSG00000107872                              F-box and leucine rich repeat protein 15 [Source:HGNC Symbol;Acc:HGNC:28155]
+## ENSG00000278922                                                                                          novel transcript
+##                 chromosome_name start_position end_position   gene_biotype
+## ENSG00000285976               6       63572472     63583587 protein_coding
+## ENSG00000243449               4        2041993      2043970 protein_coding
+## ENSG00000102931              16       57245259     57253635 protein_coding
+## ENSG00000188483               9      129175552    129178261 protein_coding
+## ENSG00000141933              19         507497       519654 protein_coding
+## ENSG00000168282              14       49620799     49623481 protein_coding
+## ENSG00000101084              20       36605779     36612557 protein_coding
+## ENSG00000140406              15       81000923     81005788 protein_coding
+## ENSG00000107872              10      102419189    102423136 protein_coding
+## ENSG00000278922              16       30526918     30528294            TEC
+##                 strand hgnc_symbol entrezgene_id    logFC    logCPM
+## ENSG00000285976      1                        NA 3.385641 2.8459422
+## ENSG00000243449      1     C4orf48        401115 4.061919 0.7359594
+## ENSG00000102931      1      ARL2BP         23568 2.919690 1.3137569
+## ENSG00000188483     -1       IER5L        389792 2.333338 2.3336045
+## ENSG00000141933      1       TPGS1         91978 3.794875 0.2703689
+## ENSG00000168282      1       MGAT2          4247 4.441125 0.2708495
+## ENSG00000101084      1      RAB5IF         55969 1.950954 2.3012652
+## ENSG00000140406      1      TLNRD1         59274 1.249159 5.2771329
+## ENSG00000107872      1      FBXL15         79176 2.401716 1.9916630
+## ENSG00000278922      1                        NA 3.500324 0.1578795
+##                       PValue          FDR
+## ENSG00000285976 3.431904e-83 2.005742e-78
+## ENSG00000243449 4.174403e-76 1.219844e-71
+## ENSG00000102931 6.048301e-68 1.178290e-63
+## ENSG00000188483 1.021044e-66 1.491848e-62
+## ENSG00000141933 2.287654e-49 2.372486e-45
+## ENSG00000168282 2.435651e-49 2.372486e-45
+## ENSG00000101084 4.226438e-49 3.528714e-45
+## ENSG00000140406 1.744253e-46 1.274264e-42
+## ENSG00000107872 1.536918e-45 9.980404e-42
+## ENSG00000278922 2.333296e-40 1.363672e-36
+\end{verbatim}
+
+Выведем топ по генной онтологии
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{go <-}\StringTok{ }\KeywordTok{goana.DGEExact}\NormalTok{(}\DataTypeTok{de=}\NormalTok{DE_res_cut, }\DataTypeTok{geneid =}\NormalTok{ DE_res_cut}\OperatorTok{$}\NormalTok{genes}\OperatorTok{$}\NormalTok{entrezgene_id, }\DataTypeTok{species=}\StringTok{"Hs"}\NormalTok{)}
+\KeywordTok{topGO}\NormalTok{(go,  }\DataTypeTok{sort=}\StringTok{"Up"}\NormalTok{, }\DataTypeTok{number =} \DecValTok{10}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                                  Term Ont     N   Up Down         P.Up
+## GO:0005515            protein binding  MF 13514 1580 1231 3.464864e-98
+## GO:0003674         molecular_function  MF 17945 1886 1517 5.102795e-98
+## GO:0005488                    binding  MF 16124 1764 1382 4.457932e-96
+## GO:0005622              intracellular  CC 14811 1649 1397 5.262044e-86
+## GO:0005575         cellular_component  CC 18782 1895 1535 2.624197e-75
+## GO:0110165 cellular anatomical entity  CC 18592 1880 1526 9.684866e-74
+## GO:0043229    intracellular organelle  CC 13033 1459 1244 4.024923e-65
+## GO:0043226                  organelle  CC 14126 1543 1342 1.334359e-64
+## GO:0043227 membrane-bounded organelle  CC 13013 1444 1288 1.556445e-60
+## GO:0005737                  cytoplasm  CC 11493 1316 1190 3.333863e-59
+##                   P.Down
+## GO:0005515  1.125553e-84
+## GO:0003674 3.427922e-125
+## GO:0005488  5.506290e-90
+## GO:0005622 1.249214e-139
+## GO:0005575 2.085052e-113
+## GO:0110165 5.961478e-112
+## GO:0043229 6.197756e-105
+## GO:0043226 1.476937e-126
+## GO:0043227 2.238483e-130
+## GO:0005737 7.997547e-125
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{topGO}\NormalTok{(go,  }\DataTypeTok{sort=}\StringTok{"Down"}\NormalTok{, }\DataTypeTok{number =} \DecValTok{10}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                                                Term Ont     N   Up Down
+## GO:0005622                            intracellular  CC 14811 1649 1397
+## GO:0043227               membrane-bounded organelle  CC 13013 1444 1288
+## GO:0043226                                organelle  CC 14126 1543 1342
+## GO:0003674                       molecular_function  MF 17945 1886 1517
+## GO:0005737                                cytoplasm  CC 11493 1316 1190
+## GO:0005575                       cellular_component  CC 18782 1895 1535
+## GO:0110165               cellular anatomical entity  CC 18592 1880 1526
+## GO:0043231 intracellular membrane-bounded organelle  CC 11240 1288 1148
+## GO:0043229                  intracellular organelle  CC 13033 1459 1244
+## GO:0008150                       biological_process  BP 18159 1817 1494
+##                    P.Up        P.Down
+## GO:0005622 5.262044e-86 1.249214e-139
+## GO:0043227 1.556445e-60 2.238483e-130
+## GO:0043226 1.334359e-64 1.476937e-126
+## GO:0003674 5.102795e-98 3.427922e-125
+## GO:0005737 3.333863e-59 7.997547e-125
+## GO:0005575 2.624197e-75 2.085052e-113
+## GO:0110165 9.684866e-74 5.961478e-112
+## GO:0043231 5.213613e-57 1.497887e-110
+## GO:0043229 4.024923e-65 6.197756e-105
+## GO:0008150 3.544482e-58 5.477682e-101
+\end{verbatim}
+
+Выведем топ по метаболическим путям
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{kegg <-}\StringTok{ }\KeywordTok{kegga.DGEExact}\NormalTok{(}\DataTypeTok{de=}\NormalTok{DE_res_cut, }\DataTypeTok{geneid =}\NormalTok{ DE_res_cut}\OperatorTok{$}\NormalTok{genes}\OperatorTok{$}\NormalTok{entrezgene_id, }\DataTypeTok{species=}\StringTok{"Hs"}\NormalTok{)}
+\KeywordTok{topKEGG}\NormalTok{(kegg, }\DataTypeTok{sort=}\StringTok{"Up"}\NormalTok{,}\DataTypeTok{number =} \DecValTok{10}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                                                                               Pathway
+## path:hsa04144                                                             Endocytosis
+## path:hsa05165                                          Human papillomavirus infection
+## path:hsa04330                                                 Notch signaling pathway
+## path:hsa05130                                   Pathogenic Escherichia coli infection
+## path:hsa04140                                                      Autophagy - animal
+## path:hsa04510                                                          Focal adhesion
+## path:hsa00532 Glycosaminoglycan biosynthesis - chondroitin sulfate / dermatan sulfate
+## path:hsa04142                                                                Lysosome
+## path:hsa04668                                                   TNF signaling pathway
+## path:hsa05161                                                             Hepatitis B
+##                 N Up Down         P.Up      P.Down
+## path:hsa04144 252 44   20 2.325756e-06 0.186966374
+## path:hsa05165 331 51   16 1.563333e-05 0.903748793
+## path:hsa04330  53 14    3 8.265579e-05 0.666803883
+## path:hsa05130 197 32   14 2.127082e-04 0.379946295
+## path:hsa04140 137 24   12 4.088435e-04 0.166319469
+## path:hsa04510 200 31   11 6.061691e-04 0.738164849
+## path:hsa00532  20  7    0 8.250268e-04 1.000000000
+## path:hsa04142 128 22   16 9.078585e-04 0.007621515
+## path:hsa04668 112 20   13 9.332543e-04 0.026516014
+## path:hsa05161 162 26   15 9.541692e-04 0.095181055
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{topKEGG}\NormalTok{(kegg, }\StringTok{"Down"}\NormalTok{,}\DataTypeTok{number =} \DecValTok{10}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                                                         Pathway    N  Up Down
+## path:hsa01100                                Metabolic pathways 1493 128  247
+## path:hsa00190                         Oxidative phosphorylation  133  11   53
+## path:hsa05012                                 Parkinson disease  249  19   72
+## path:hsa05016                                Huntington disease  306  34   79
+## path:hsa05020                                     Prion disease  273  24   74
+## path:hsa05014                     Amyotrophic lateral sclerosis  364  29   84
+## path:hsa04714                                     Thermogenesis  231  25   65
+## path:hsa05010                                 Alzheimer disease  369  41   75
+## path:hsa05022 Pathways of neurodegeneration - multiple diseases  475  51   86
+## path:hsa04932                 Non-alcoholic fatty liver disease  150  16   38
+##                     P.Up       P.Down
+## path:hsa01100 0.39309798 1.274278e-45
+## path:hsa00190 0.56018914 7.024230e-29
+## path:hsa05012 0.69479084 2.103270e-28
+## path:hsa05016 0.05422457 2.092005e-27
+## path:hsa05020 0.42909460 3.423651e-27
+## path:hsa05014 0.63492156 1.978250e-25
+## path:hsa04714 0.11014800 4.972456e-25
+## path:hsa05010 0.03770497 2.236199e-19
+## path:hsa05022 0.03900777 1.171633e-18
+## path:hsa04932 0.18753491 1.315383e-13
+\end{verbatim}
+
+Результаты:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{-1}
+\item
+  Для анализа была выбрана база транскриптомов базальных клеток
+  дыхательных путей курильщиков и не курильщиков
+  (\url{https://www.ebi.ac.uk/gxa/experiments/E-GEOD-47718})
+\item
+  Было расчитано pca и построены графики: barplot, точечный,
+  иерархической кластаризации, дистанций между генами. Они показали, что
+  между анализируемыми классами нет значительных различий из чего можно
+  сделать вывод, что у курильщиков меняется экспрессия малой части всех
+  генов.
+\item
+  Был проведён полноценный анализ дифференциальной экспрессии,
+  включающий в себя: нормализацию TMM и расчёт дисперсии общей и для
+  каждого гена. Исходя из него, было выделено 10 генов, дающих
+  наибольшее отклонение между классами: C4orf48, ARL2BP, IER5L, PGS1,
+  MGAT2, RAB5IF, TLNRD1, FBXL15, ENSG00000285976, ENSG00000278922
+\item
+  Согласно генной онтологии сложно сделать однозначные выводы, что при
+  курении больше, что ниже, так как со всем терминам топа соответствуют
+  большие показатели и Up, и Down полей с достаточным p.value. Однако
+  курение точно связано с сильным изменением следующих аспектов:
+  связывание с белками, молекулярная функция, связывание,
+  внутриклеточно, клеточный компонент, клеточное анатомическое
+  образование, внутриклеточная органелла, органела, цитоплазма,
+  мембраносвязанная органелла.
+\item
+  Согласно анализу метаболических путей у курильщиков в отличии от
+  некурильщиков выше значения: предрасположенности к Гепатиту Б, Вирусу
+  папилломы человека, патогенной инфекции E.Coli, эндоцитоза, аутофагии,
+  биосинтеза гликозаминогликанов, путей передачи сигналов Notch, TNF.
+  Ниже: предрасположенности к болезням Паркинсона, Хантингтона,
+  Альцгеймера, Прионной болезни, Боковому амиотрофическому склерозу,
+  Неалкогольной жировой болезни печени, термогенеза, метаболические и
+  нейродегенеративные пути.
+\end{enumerate}
+
+The end!
+
+\end{document}

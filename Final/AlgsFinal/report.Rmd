@@ -2,17 +2,22 @@
 title: "report"
 author: "Dmitry"
 date: "25 12 2020"
-output: pdf_document
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
 ---
 
 Устанавливаем пакеты
-```{r}
+```{r setup}
+chooseCRANmirror(graphics=FALSE, ind=1)
+
 if (!requireNamespace("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
 
 BiocManager::install("edgeR")
 BiocManager::install("limma")
-install.packages("plyr")
+install.packages('plyr', repos = "http://cran.us.r-project.org")
 install.packages("dplyr")
 install.packages("ggplot2")
 BiocManager::install("biomaRt")
